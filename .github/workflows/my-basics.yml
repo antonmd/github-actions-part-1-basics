@@ -1,6 +1,9 @@
 # Github actons part 1 by Anton Dvornikov
 
 name: first-actions
+env:
+  APPLICATION_NAME: "Flask app"
+  PACKAGE: "flask-deploy-ver-${{ github.sha }}"
 
 on:
   push:
@@ -13,6 +16,11 @@ jobs:
     steps:
     - name: Print Hello Message
       run: echo "Hello World from Testing"
+    - name: Execute few commands
+      run: |
+        echo "Hello 1"
+        echo "Hello 1"
+        echo "APPLICATION_NAME: ${{ env.APPLICATION_NAME }}"
 
 
   deploy:
@@ -22,3 +30,6 @@ jobs:
     steps:
     - name: Print Hello Message
       run: echo "Hello World from Deploy"
+    - name: Execute few commands
+      run: |
+        echo "PACKAGE: ${{ env.PACKAGE }}"

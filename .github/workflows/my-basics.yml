@@ -34,12 +34,19 @@ jobs:
 
     runs-on: ubuntu-latest
     needs: [testing]
+    env:
+      AUTHOR: "Anton"
+      EMAIL: "antonpostrest@gmail.com"
     steps:
+    env:
+      TEST_NAME: "env.EMAIL"
     - name: Print Hello Message
       run: echo "Hello World from Deploy"
     - name: Execute few commands
       run: |
         echo "PACKAGE: ${{ env.PACKAGE }}"
+      run: |
+        echo "PACKAGE: ${{ env.AUTHOR }} {{ TEST_NAME }}"
     - name: Test our packages 1
       run: aws --version
     - name: Test our packages 2

@@ -39,14 +39,14 @@ jobs:
       EMAIL: "antonpostrest@gmail.com"
     steps:
     - name: Print Hello Message
-      env:
-      TEST_NAME: "{{ env.EMAIL }}"
       run: echo "Hello World from Deploy"
     - name: Execute few commands
       run: |
         echo "PACKAGE: ${{ env.PACKAGE }}"
       run: |
         echo "PACKAGE: ${{ env.AUTHOR }} {{ TEST_NAME }}"
+            env:
+        TEST_NAME: "{{ env.EMAIL }}"
     - name: Test our packages 1
       run: aws --version
     - name: Test our packages 2

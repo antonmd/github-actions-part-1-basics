@@ -41,10 +41,10 @@ jobs:
     - name: Print Hello Message
       run: echo "Hello World from Deploy"
     - name: Execute few commands
-      run: |
-        echo "PACKAGE: ${{ env.PACKAGE }} ${{ env.AUTHOR }} ${{ TEST_NAME }}"
       env:
         TEST_NAME: "{{ env.EMAIL }}"
+      run: |
+        echo "PACKAGE: ${{ env.PACKAGE }} ${{ env.AUTHOR }} ${{ TEST_NAME }}"
     - name: Test our packages 1
       run: aws --version
     - name: Test our packages 2

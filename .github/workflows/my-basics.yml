@@ -44,7 +44,7 @@ jobs:
       env:
         TEST_NAME: "{{ env.EMAIL }}"
       run: |
-        echo "PACKAGE: ${{ env.PACKAGE }} ${{ env.AUTHOR }} ${{ TEST_NAME }}"
+        echo "PACKAGE: ${{ env.PACKAGE }} ${{ env.AUTHOR }} $TEST_NAME"
     - name: Test our packages 1
       run: aws --version
     - name: Test our packages 2

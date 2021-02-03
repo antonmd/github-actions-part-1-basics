@@ -38,9 +38,9 @@ jobs:
       AUTHOR: "Anton"
       EMAIL: "antonpostrest@gmail.com"
     steps:
-    env:
-      TEST_NAME: "{{ env.EMAIL }}"
     - name: Print Hello Message
+      env:
+      TEST_NAME: "{{ env.EMAIL }}"
       run: echo "Hello World from Deploy"
     - name: Execute few commands
       run: |
